@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Copyright 2019-2020 ForgeRock AS. All Rights Reserved
+#
+# Use of this code requires a commercial software license with ForgeRock AS.
+# or with one of its affiliates. All use shall be exclusively subject
+# to such license between the licensee and ForgeRock AS.
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+am_upgrade_tool_home="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+exec java -jar $am_upgrade_tool_home/lib/amupgrade.jar "$@"
