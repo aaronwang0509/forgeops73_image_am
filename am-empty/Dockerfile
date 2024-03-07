@@ -29,7 +29,7 @@ RUN mkdir -p /opt/async-profiler && \
     wget -q -O-  https://github.com/jvm-profiling-tools/async-profiler/releases/download/v1.5/async-profiler-1.5-linux-x64.tar.gz \
     | tar xzv -C /opt/async-profiler
 
-ADD /build/openam.war "$CATALINA_HOME"/webapps/
+ADD build/openam.war "$CATALINA_HOME"/webapps/
 RUN unzip -q "$CATALINA_HOME"/webapps/openam.war -d "$CATALINA_HOME"/webapps/am && \
     rm "$CATALINA_HOME"/webapps/openam.war
 
