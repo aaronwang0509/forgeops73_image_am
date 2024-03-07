@@ -13,7 +13,7 @@ pipeline {
                     def imageName = "${env.IMAGE_NAME}-empty"
                     def fullVersion = "${env.MAJOR_VERSION}.${env.MINOR_VERSION}.${env.BUILD_NUMBER}"
                     dir('am-empty') {
-                        docker.build("-f ./Dockerfile -t ${imageName}:${fullVersion} .")
+                        docker.build("${imageName}:${fullVersion}")
                         docker.withRegistry('https://index.docker.io/v1/', env.DOCKERHUB_CREDENTIALS_ID) {
                             docker.image("${imageName}:${fullVersion}").push()
                         }
