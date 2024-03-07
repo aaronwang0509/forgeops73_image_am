@@ -6,8 +6,8 @@ pipeline {
         MAJOR_VERSION = '7'
         MINOR_VERSION = '30'
     }
-    /*
     stages {
+        /*
         stage('Build and Push am-empty Image') {
             steps {
                 script {
